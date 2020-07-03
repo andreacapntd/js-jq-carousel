@@ -20,8 +20,22 @@ $(document).ready(function (){
     } else {
       imgActive.next().addClass("active");
       iActive.next().addClass("active");
-
     }
   });
+
+  imgPrev.click(function () {
+    var imgActive = $(".slider-wrapper img.active");
+    imgActive.removeClass("active");
+    var iActive = $(".slider-wrapper i.active");
+    iActive.removeClass("active");
+    if (imgActive.hasClass("first")) {
+      $(".slider-wrapper img.last").addClass("active");
+      $(".slider-wrapper i.last").addClass("active");
+    } else {
+      imgActive.prev().addClass("active");
+      iActive.prev().addClass("active");
+    }
+  });
+
 });
 //-------------------Functions-----------------------
