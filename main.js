@@ -9,10 +9,22 @@ $(document).ready(function (){
   var imgNext = $(".next");
   var imgPrev = $(".prev");
 
-  imgNext.click(next);
+  imgNext.click(function () {
+    next();
+  });
 
+  imgPrev.click(function () {
+    prev();
+  });
 
-  imgPrev.click(prev);
+  $(document).keydown(function() {
+    var key = event.which;
+    if (key == 39) {
+      next();
+    } else if (key == 37) {
+      prev();
+    }
+});
 
 });
 //-------------------Functions-----------------------
